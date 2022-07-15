@@ -16,6 +16,7 @@ export type MessageDocument = Message & Document;
   options: { allowMixed: Severity.ALLOW },
 })
 export class Message {
+  _id?: string;
   @Prop({ type: String, required: true })
   userId: string;
   @Prop({ type: String, enum: ['read', 'unread'], default: 'unread' })

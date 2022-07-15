@@ -7,6 +7,8 @@ export class FeedBuilder {
     if (errors) {
       throw errors;
     }
-    return modelData.toObject();
+    const dataJson = modelData.toJSON();
+    dataJson._id = String(dataJson._id);
+    return dataJson;
   }
 }

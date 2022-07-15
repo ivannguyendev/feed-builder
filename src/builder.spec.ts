@@ -14,6 +14,7 @@ test(`${builder.FeedBuilder.name} default message`, (t) => {
     collapse: 'test',
     userId: 'whthduck',
   });
+  console.log(messagePayload._id)
   t.is(messagePayload.contents.all, 'Hello2', 'default contents of message');
   t.is(messagePayload.state, 'unread', 'default state message');
   t.is(messagePayload.tags[0], 'test', 'with tags');
