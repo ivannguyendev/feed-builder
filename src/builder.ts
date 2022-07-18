@@ -9,6 +9,11 @@ export class FeedBuilder {
     }
     const dataJson = modelData.toJSON();
     dataJson._id = String(dataJson._id);
-    return dataJson;
+    return {
+      ...dataJson,
+      _id: dataJson.collapse,
+      state: 'unread',
+      count: 1,
+    };
   }
 }
