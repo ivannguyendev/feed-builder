@@ -3,4 +3,4 @@ export * from './button.model';
 export * from './collapse.model';
 export * from './platform.model';
 export * from './content.model';
-export * from './user.model';
+export * from './actor.model';

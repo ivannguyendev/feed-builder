@@ -8,7 +8,7 @@ import mongoose, { Schema } from 'mongoose';
 import { Button } from './button.model';
 import { Content } from './content.model';
 import { Platform } from './platform.model';
-import { User } from './user.model';
+import { Actor } from './actor.model';
 
 export type MessageDocument = Message & Document;
 
@@ -22,7 +22,9 @@ export class Message {
   @Prop({ type: String, required: true })
   userId: string;
   @Prop({ required: true })
-  user: User;
+  actor: Actor;
+  @Prop({ required: true })
+  action: string;
   @Prop({ type: String, enum: ['read', 'unread'], default: 'unread' })
   state: 'unread' | 'read';
   @Prop({ required: true })

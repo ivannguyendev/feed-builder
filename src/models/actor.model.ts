@@ -6,13 +6,13 @@ import {
 } from '@typegoose/typegoose';
 import { Schema } from 'mongoose';
 
-export type UserDocument = User & Document;
+export type ActorDocument = Actor & Document;
 
 @ModelOptions({
   schemaOptions: { _id: false },
   options: { allowMixed: Severity.ALLOW },
 })
-export class User {
+export class Actor {
   @Prop({ type: String })
   _id?: string;
   @Prop({ type: String })
@@ -25,4 +25,4 @@ export class User {
   dob?: string;
 }
 
-export const UserModel = getModelForClass(User);
+export const ActorModel = getModelForClass(Actor);
