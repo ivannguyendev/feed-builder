@@ -9,10 +9,11 @@ import { Schema } from 'mongoose';
 export type UserDocument = User & Document;
 
 @ModelOptions({
-  schemaOptions: { _id: true },
+  schemaOptions: { _id: false },
   options: { allowMixed: Severity.ALLOW },
 })
 export class User {
+  @Prop({ type: String })
   _id?: string;
   @Prop({ type: String })
   name?: string;

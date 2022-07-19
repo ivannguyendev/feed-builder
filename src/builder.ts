@@ -8,7 +8,6 @@ export class FeedBuilder {
       throw errors;
     }
     const dataJson = modelData.toJSON();
-    dataJson._id = String(dataJson._id);
     const data = {
       ...dataJson,
       _id: dataJson.collapse,

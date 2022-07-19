@@ -4,7 +4,7 @@ import {
   getModelForClass,
   Severity,
 } from '@typegoose/typegoose';
-import { Schema } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 import { Button } from './button.model';
 import { Content } from './content.model';
 import { Platform } from './platform.model';
@@ -13,10 +13,11 @@ import { User } from './user.model';
 export type MessageDocument = Message & Document;
 
 @ModelOptions({
-  schemaOptions: { _id: true, timestamps: true },
+  schemaOptions: { _id: false, timestamps: true },
   options: { allowMixed: Severity.ALLOW },
 })
 export class Message {
+  @Prop({ type: String, default: () => String(new mongoose.Types.ObjectId()) })
   _id?: string;
   @Prop({ type: String, required: true })
   userId: string;
